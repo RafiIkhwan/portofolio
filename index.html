@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Rafi Ikhwan Purnama</title>
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <h3>Rafi Ikhwan</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#project">Project</a></li>
+                    <li><a href="#">Friend</a></li>
+                    <li><a href="#">Random</a></li>
+                </ul>
+                <span>Contact Me!</span>
+            </nav>
+            <main id="home">
+                <div class="left-section">
+                    <h1>My Name is <b>Rafi.</b></h1><br>
+                    <p>Im a Website Engineer, right now im 2nd Grade Senior High School in SMKN 1 Cimahi</p><br><br>
+                    <ul>
+                        <li><a style="background-color: rgb(229, 31, 36);" href="https://java.com">Java</a></li>
+                    </ul>
+                    <ul>
+                        <li><a style="background-color: #f06529;" href="https://html.com">HTML</a></li>
+                        <li><a style="background-color: #2965f1;" href="https://css.com">CSS</a></li>
+                    </ul>
+                    <ul>
+                        <li><a style="background-color: #f0db4f; color: #0F0F0F;" href="https://www.javascript.com">JavaScript</a></li>
+                        <li><a style="background-color: #61D8FB; color: #0F0F0F;" href="https://react.dev">React</a></li>
+                    </ul>
+                    <ul>
+                        <li><a style="background-color: #777BB3;" href="https://www.php.net">PHP</a></li>
+                        <li><a style="background-color: #F05340;" href="https://laravel.com">Laravel</a></li>
+                        <li><a style="background-color: #00758f;" href="https://www.mysql.com">MySQL</a></li>
+                    </ul>
+                        
+                </div>
+                <div class="">
+                    
+                </div>
+                <div class="right-section">
+                    <div class="profile-img">
+                        <img src="img/rfk.png" alt="Picture">
+                    </div>
+                </div>
+            </main>
+            <br><br>
+            <project id="project">
+                <h2 class="project-title">
+                    My Projects
+                </h2>
+                <br>
+                <div class="first-row">
+                    <div class="project">
+                        <img src="/img/project/youtube-apk.png" alt="">
+                        <div class="about-project">
+                            <h3 class="project-title">Youtube-Clone</h3>
+                            <p class="desc-project">Clone of Youtube only using HTML and CSS native, this is my first Front End Website</p>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="/img/project/akuntasi-sekolah.png" alt="">
+                        <div class="about-project">
+                            <h3 class="project-title">Akuntasi Sekolah</h3>
+                            <p class="desc-project">An Accountancy Website for school employees, this project are my Final Task on Second Grade</p>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="/img/project/perpus-laravel.png" alt="">
+                        <div class="about-project">
+                            <h3 class="project-title">Perpustakaan Laravel</h3>
+                            <p class="desc-project">Library Website that have a same system with normal library</p>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="/img/project/ecommerce.png" alt="">
+                        <div class="about-project">
+                            <h3 class="project-title">Ecommerce</h3>
+                            <p class="desc-project">This web are my exercise before the final competition</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="indicators">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </div>                  
+                <div class="second-row">
+                    
+                </div>
+            </project>
+        </div>
+        <script>
+            const reelsContainer = document.querySelector('.first-row');
+            const dots = document.querySelectorAll('.dot');
+
+            reelsContainer.addEventListener('scroll', handleScroll);
+
+            function handleScroll() {
+                const scrollPosition = reelsContainer.scrollLeft;
+                const reelWidth = reelsContainer.clientWidth;
+                const currentReelIndex = Math.floor(scrollPosition / reelWidth);
+
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentReelIndex);
+                });
+            }
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    reelsContainer.scroll({
+                    left: index * reelsContainer.clientWidth,
+                    behavior: 'smooth'
+                    });
+                });
+            });
+
+            dots[0].classList.add('active');
+
+        </script>
+    </body>
+</html>
